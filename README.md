@@ -161,7 +161,7 @@ For instance, the _Stm_ non terminal represents statements. So there is an abstr
 
 ## Building an abstract syntax tree
 
-Add a `Main` class to the project, with a `main` method that creates the the AST for the program given above, and print it.
+Add a `Main` class to the project, with a `main` method that creates the AST for the program given above, and print it.
 
 As an example, below is the AST for the program:
 
@@ -182,12 +182,30 @@ Stm p = new CompoundStm(new AssignStm("x",
 
 ## Pretty printing the AST
 
-Make `AST` implement the interface `ToTree` from the `javalang-render` library. This will allow converting the AST to general trees that can be easily drawn on a terminal.
+Make `AST` implement the interface `javaslang.render.ToTree<String>` from the `javalang-render` library. This will allow converting the AST to general trees of `String` that can be easily drawn in different ways.
+
+1. Add the `implements` clause to the class declaration of `AST`.
+2. Implement the method `toTree` in each concrete subclass of `AST`. It has no arguments and returns a `javaslang.collection.TreeNode<String>` corresponding to the AST.
+3. Test with the AST written previously, drawing it in the terminal.
 
 ## Calculating the maximum number of arguments in print statements
 
 Add a method `maxargs` to calculate the maximum number of arguments in print statements ocurring in a given program.
 
+It should have no arguments and returns an `int`.
+
+Test with the AST you have created above.
+
 ## Interpreting
 
 Add a method `interp` to run a program.
+
+It should have a `Map<String, Integer>` as argument representing the memory, and runs the program.
+
+The memory can be a hash table where the keys are variable names, and the associated values are the value of the variable.
+
+Test with the AST you have created above.
+
+## Write test units for the project
+
+Write the class `MainTest` in the directory `test/java` to test the interpreter.
