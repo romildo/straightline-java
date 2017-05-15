@@ -185,7 +185,7 @@ Stm p = new CompoundStm(new AssignStm("x",
 Make `AST` implement the interface `javaslang.render.ToTree<String>` from the `javalang-render` library. This will allow converting the AST to general trees of `String` that can be easily drawn in different ways.
 
 1. Add the `implements` clause to the class declaration of `AST`.
-2. Implement the method `toTree` in each concrete subclass of `AST`. It has no arguments and returns a `javaslang.collection.TreeNode<String>` corresponding to the AST.
+2. Implement the method `toTree` in each concrete subclass of `AST`. It has no arguments and returns a `javaslang.collection.Tree.Node<String>` corresponding to the AST.
 3. Test with the AST written previously, drawing it in the terminal.
 
 ## Calculating the maximum number of arguments in print statements
