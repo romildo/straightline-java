@@ -1,17 +1,18 @@
 public class AssignStm extends Stm {
-   public final String id;
-   public final Stm stm2;
 
-   public AssignStm(String id, Stm stm2) {
+   public final String id;
+   public final Exp exp;
+
+   public AssignStm(String id, Exp exp) {
       this.id = id;
-      this.stm2 = stm2;
+      this.exp = exp;
    }
 
    @Override
    public String toString() {
       return "AssignStm{" +
              "id='" + id + '\'' +
-             ", stm2=" + stm2 +
+             ", exp=" + exp +
              '}';
    }
 }

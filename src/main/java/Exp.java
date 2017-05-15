@@ -1,2 +1,2 @@
-public class Exp {
+public abstract class Exp extends AST {
 }

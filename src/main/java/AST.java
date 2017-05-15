@@ -1,2 +1,2 @@
-public class AST {
+public abstract class AST {
 }
