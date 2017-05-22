@@ -1,3 +1,5 @@
+import javaslang.collection.Tree;
+
 public class NumExp extends Exp {
    public final int num;
 
@@ -10,5 +12,10 @@ public class NumExp extends Exp {
       return "NumExp{" +
              "num=" + num +
              '}';
+   }
+
+   @Override
+   public Tree.Node<String> toTree() {
+      return Tree.of("NumExp " + num);
    }
 }

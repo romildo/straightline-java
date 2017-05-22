@@ -1,3 +1,5 @@
+import javaslang.collection.Tree;
+
 public class CompoundStm extends Stm {
 
    public final Stm stm1;
@@ -14,5 +16,10 @@ public class CompoundStm extends Stm {
              "stm1=" + stm1 +
              ", stm2=" + stm2 +
              '}';
+   }
+
+   @Override
+   public Tree.Node<String> toTree() {
+      return Tree.of("CompoundStm", stm1.toTree(), stm2.toTree());
    }
 }

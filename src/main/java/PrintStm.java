@@ -1,4 +1,5 @@
 import javaslang.collection.List;
+import javaslang.collection.Tree;
 
 public class PrintStm extends Stm {
 
@@ -13,5 +14,10 @@ public class PrintStm extends Stm {
       return "PrintStm{" +
              "exps=" + exps +
              '}';
+   }
+
+   @Override
+   public Tree.Node<String> toTree() {
+      return Tree.of("PrintStm", exps.map(Exp::toTree));
    }
 }

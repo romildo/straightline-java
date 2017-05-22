@@ -1,3 +1,5 @@
+import javaslang.collection.Tree;
+
 public class EseqExp extends Exp {
 
    public final Stm stm;
@@ -14,5 +16,10 @@ public class EseqExp extends Exp {
              "stm=" + stm +
              ", exp=" + exp +
              '}';
+   }
+
+   @Override
+   public Tree.Node<String> toTree() {
+      return Tree.of("EseqExp", stm.toTree(), exp.toTree());
    }
 }
