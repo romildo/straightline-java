@@ -1,3 +1,5 @@
+import javaslang.collection.Tree;
+
 public class AssignStm extends Stm {
 
    public final String id;
@@ -14,5 +16,10 @@ public class AssignStm extends Stm {
              "id='" + id + '\'' +
              ", exp=" + exp +
              '}';
+   }
+
+   @Override
+   public Tree.Node<String> toTree() {
+      return Tree.of("AssignStm", Tree.of(id), exp.toTree());
    }
 }
