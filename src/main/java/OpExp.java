@@ -1,3 +1,5 @@
+import javaslang.collection.Tree;
+
 public class OpExp extends Exp {
 
    public enum Op { PLUS, MINUS, TIMES, DIV }
@@ -19,5 +21,10 @@ public class OpExp extends Exp {
              ", right=" + right +
              ", op=" + op +
              '}';
+   }
+
+   @Override
+   public Tree.Node<String> toTree() {
+      return Tree.of("OpExp " + op, left.toTree(), right.toTree());
    }
 }

@@ -1,3 +1,5 @@
+import javaslang.collection.Tree;
+
 public class IdExp extends Exp {
    public final String id;
 
@@ -10,5 +12,10 @@ public class IdExp extends Exp {
       return "IdExp{" +
              "id='" + id + '\'' +
              '}';
+   }
+
+   @Override
+   public Tree.Node<String> toTree() {
+      return Tree.of("IdExp " + id);
    }
 }
