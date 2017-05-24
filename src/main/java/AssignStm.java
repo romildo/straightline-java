@@ -1,5 +1,7 @@
 import javaslang.collection.Tree;
 
+import java.util.Map;
+
 public class AssignStm extends Stm {
 
    public final String id;
@@ -21,5 +23,15 @@ public class AssignStm extends Stm {
    @Override
    public Tree.Node<String> toTree() {
       return Tree.of("AssignStm", Tree.of(id), exp.toTree());
+   }
+
+   @Override
+   public int maxargs() {
+      return exp.maxargs();
+   }
+
+   @Override
+   public void interp(Map<String, Integer> mem) {
+      mem.put(id, exp.eval(mem));
    }
 }
