@@ -10,7 +10,7 @@ public class Lexer {
    private Reader in;
    private int x;
 
-   private Map<String, Token.T> reserved = new Hashtable<String, Token.T>();
+   private Map<String, Token.T> reserved = new Hashtable<>();
 
    public Lexer(Reader in) throws IOException {
       this.in = in;
