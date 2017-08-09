@@ -15,7 +15,7 @@ public class Token {
    }
 
    public Token(T type) {
-      this.type = type;
+      this(type, null);
    }
 
    @Override
