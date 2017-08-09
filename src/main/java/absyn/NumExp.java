@@ -1,24 +1,26 @@
+package absyn;
+
 import javaslang.collection.Tree;
 
 import java.util.Map;
 
-public class IdExp extends Exp {
-   public final String id;
+public class NumExp extends Exp {
+   public final int num;
 
-   public IdExp(String id) {
-      this.id = id;
+   public NumExp(int num) {
+      this.num = num;
    }
 
    @Override
    public String toString() {
-      return "IdExp{" +
-             "id='" + id + '\'' +
+      return "absyn.NumExp{" +
+             "num=" + num +
              '}';
    }
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("IdExp " + id);
+      return Tree.of("absyn.NumExp " + num);
    }
 
    @Override
@@ -28,7 +30,6 @@ public class IdExp extends Exp {
 
    @Override
    public Integer eval(Map<String, Integer> mem) {
-      Integer x = mem.get(id);
-      return x == null ? 0 : x;
+      return num;
    }
 }

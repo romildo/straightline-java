@@ -1,3 +1,5 @@
+package absyn;
+
 import javaslang.collection.List;
 import javaslang.collection.Tree;
 
@@ -13,14 +15,14 @@ public class PrintStm extends Stm {
 
    @Override
    public String toString() {
-      return "PrintStm{" +
+      return "absyn.PrintStm{" +
              "exps=" + exps +
              '}';
    }
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("PrintStm", exps.map(Exp::toTree));
+      return Tree.of("absyn.PrintStm", exps.map(Exp::toTree));
    }
 
    @Override

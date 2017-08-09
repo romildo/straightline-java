@@ -1,3 +1,5 @@
+package absyn;
+
 import java.util.Map;
 
 public abstract class Stm extends AST {

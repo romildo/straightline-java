@@ -153,11 +153,11 @@ print(b)
 - There is a class for each interesting non terminal (representing a kind of phrase).
 - There is a subclass for each production rule for that non terminal (representing a particular form for the phrase).
 
-For instance, the _Stm_ non terminal represents statements. So there is an abstract class, named `Stm` to represent all forms of statements. But there are three forms of statements, and for each one there is a subclass of `Stm`:
+For instance, the _Stm_ non terminal represents statements. So there is an abstract class, named `absyn.Stm` to represent all forms of statements. But there are three forms of statements, and for each one there is a subclass of `absyn.Stm`:
 
 - compound statements, represented by the `Compoundstm` class
-- assignment statements, represented by the `AssignStm` class
-- print statements, represented by the `PrintStm`class
+- assignment statements, represented by the `absyn.AssignStm` class
+- print statements, represented by the `absyn.PrintStm`class
 
 # Activities
 
@@ -184,10 +184,10 @@ Stm p = new CompoundStm(new AssignStm("x",
 
 ## Pretty printing the AST
 
-Make `AST` implement the interface `javaslang.render.ToTree<String>` from the `javalang-render` library. This will allow converting the AST to general trees of `String` that can be easily drawn in different ways.
+Make `absyn.AST` implement the interface `javaslang.render.ToTree<String>` from the `javalang-render` library. This will allow converting the AST to general trees of `String` that can be easily drawn in different ways.
 
-1. Add the `implements` clause to the class declaration of `AST`.
-2. Implement the method `toTree` in each concrete subclass of `AST`. It has no arguments and returns a `javaslang.collection.Tree.Node<String>` corresponding to the AST.
+1. Add the `implements` clause to the class declaration of `absyn.AST`.
+2. Implement the method `toTree` in each concrete subclass of `absyn.AST`. It has no arguments and returns a `javaslang.collection.Tree.Node<String>` corresponding to the AST.
 3. Test with the AST written previously, drawing it in the terminal.
 
 ## Calculating the maximum number of arguments in print statements
