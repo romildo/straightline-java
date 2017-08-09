@@ -1,5 +1,5 @@
+import absyn.*;
 import javaslang.collection.List;
-import javaslang.render.text.Box;
 import javaslang.render.text.Boxes;
 
 import java.util.HashMap;

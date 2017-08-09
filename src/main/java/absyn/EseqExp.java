@@ -1,3 +1,5 @@
+package absyn;
+
 import javaslang.collection.Tree;
 
 import java.util.Map;
@@ -14,7 +16,7 @@ public class EseqExp extends Exp {
 
    @Override
    public String toString() {
-      return "EseqExp{" +
+      return "absyn.EseqExp{" +
              "stm=" + stm +
              ", exp=" + exp +
              '}';
@@ -22,7 +24,7 @@ public class EseqExp extends Exp {
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("EseqExp", stm.toTree(), exp.toTree());
+      return Tree.of("absyn.EseqExp", stm.toTree(), exp.toTree());
    }
 
    @Override

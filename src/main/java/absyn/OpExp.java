@@ -1,3 +1,5 @@
+package absyn;
+
 import javaslang.collection.Tree;
 
 import java.util.Map;
@@ -18,7 +20,7 @@ public class OpExp extends Exp {
 
    @Override
    public String toString() {
-      return "OpExp{" +
+      return "absyn.OpExp{" +
              "left=" + left +
              ", right=" + right +
              ", op=" + op +
@@ -27,7 +29,7 @@ public class OpExp extends Exp {
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("OpExp " + op, left.toTree(), right.toTree());
+      return Tree.of("absyn.OpExp " + op, left.toTree(), right.toTree());
    }
 
    @Override

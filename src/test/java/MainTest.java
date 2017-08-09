@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class MainTest {
    /*
-   private void tmaxargs(Stm program, int n) {
+   private void tmaxargs(absyn.Stm program, int n) {
       softly.assertThat(program.maxargs())
                .as("%s", program)
                .equals(n);
@@ -16,7 +16,7 @@ public class MainTest {
    /*
    @Test
    public void testMaxArgs() {
-      tmaxargs(new AssignStm("z", new NumExp(8)), 0);
+      tmaxargs(new absyn.AssignStm("z", new absyn.NumExp(8)), 0);
    }
    */
 }

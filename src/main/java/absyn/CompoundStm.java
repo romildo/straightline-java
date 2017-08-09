@@ -1,3 +1,5 @@
+package absyn;
+
 import javaslang.collection.Tree;
 
 import java.util.Map;
@@ -14,7 +16,7 @@ public class CompoundStm extends Stm {
 
    @Override
    public String toString() {
-      return "CompoundStm{" +
+      return "absyn.CompoundStm{" +
              "stm1=" + stm1 +
              ", stm2=" + stm2 +
              '}';
@@ -22,7 +24,7 @@ public class CompoundStm extends Stm {
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("CompoundStm", stm1.toTree(), stm2.toTree());
+      return Tree.of("absyn.CompoundStm", stm1.toTree(), stm2.toTree());
    }
 
    @Override
