@@ -50,6 +50,51 @@
          <version>3.7.0</version>
          <scope>test</scope>
       </dependency>
+
+      <dependency>
+         <groupId>com.github.vbmacher</groupId>
+         <artifactId>java-cup-runtime</artifactId>
+         <version>11b-20160615</version>
+      </dependency>
    </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>de.jflex</groupId>
+            <artifactId>jflex-maven-plugin</artifactId>
+            <version>1.6.1</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>generate</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+
+         <plugin>
+            <groupId>com.github.vbmacher</groupId>
+            <artifactId>cup-maven-plugin</artifactId>
+            <version>11b-20160615</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>generate</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <packageName>parse</packageName>
+               <className>Parser</className>
+               <symbolsName>SymbolConstants</symbolsName>
+               <symbolsInterface>true</symbolsInterface>
+               <!-- Makes CUP generate xleft/xright handles for accessing Location objects for symbol start/end inside actions. -->
+               <locations>true</locations>
+               <expectedConflicts>0</expectedConflicts>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 
 </project>
