@@ -4,7 +4,7 @@ import javaslang.render.text.Boxes;
 
 import java.util.HashMap;
 
-public class Main {
+public class Test {
 
    public static void main(String[] args) {
 

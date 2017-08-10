@@ -163,7 +163,7 @@ For instance, the _Stm_ non terminal represents statements. So there is an abstr
 
 ## Building an abstract syntax tree
 
-Add a `Main` class to the project, with a `main` method that creates the AST for the program given above, and print it.
+Add a `Test` class to the project, with a `main` method that creates the AST for the program given above, and print it.
 
 As an example, below is the AST for the program:
 
