@@ -34,7 +34,7 @@ public class PrintStm extends Stm {
    }
 
    @Override
-   public void interp(Map<String, Integer> mem) {
+   public void interp(Map<String, Double> mem) {
       exps.forEach(e -> System.out.print(e.eval(mem) + " "));
       System.out.println();
    }

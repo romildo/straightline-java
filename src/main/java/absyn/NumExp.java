@@ -5,9 +5,9 @@ import io.vavr.collection.Tree;
 import java.util.Map;
 
 public class NumExp extends Exp {
-   public final int num;
+   public final double num;
 
-   public NumExp(int num) {
+   public NumExp(double num) {
       this.num = num;
    }
 
@@ -29,7 +29,7 @@ public class NumExp extends Exp {
    }
 
    @Override
-   public Integer eval(Map<String, Integer> mem) {
+   public Double eval(Map<String, Double> mem) {
       return num;
    }
 }

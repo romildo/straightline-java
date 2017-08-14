@@ -1,9 +1,12 @@
 import absyn.Stm;
+import io.vavr.render.ToTree;
+import io.vavr.render.text.Boxes;
 import parse.Lexer;
 import parse.Parser;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class Main {
 
@@ -23,7 +26,10 @@ public class Main {
       Lexer lex = new Lexer(input, fileName);
       Parser p = new Parser(lex);
 
-      p.parse();
+      Stm program = (Stm) (p.parse().value);
+
+      System.out.println(Boxes.box(program.toTree()));
+      program.interp(new HashMap<>());
    }
 
    public static void main(String[] args) throws java.lang.Exception {

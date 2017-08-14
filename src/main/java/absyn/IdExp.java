@@ -29,8 +29,8 @@ public class IdExp extends Exp {
    }
 
    @Override
-   public Integer eval(Map<String, Integer> mem) {
-      Integer x = mem.get(id);
+   public Double eval(Map<String, Double> mem) {
+      Double x = mem.get(id);
       return x == null ? 0 : x;
    }
 }

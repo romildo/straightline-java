@@ -33,7 +33,7 @@ public class EseqExp extends Exp {
    }
 
    @Override
-   public Integer eval(Map<String, Integer> mem) {
+   public Double eval(Map<String, Double> mem) {
       stm.interp(mem);
       return exp.eval(mem);
    }
