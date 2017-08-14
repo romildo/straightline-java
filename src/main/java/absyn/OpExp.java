@@ -1,6 +1,6 @@
 package absyn;
 
-import javaslang.collection.Tree;
+import io.vavr.collection.Tree;
 
 import java.util.Map;
 
