@@ -1,6 +1,6 @@
 package absyn;
 
-import javaslang.render.ToTree;
+import io.vavr.render.ToTree;
 
 public abstract class AST implements ToTree<String> {
 

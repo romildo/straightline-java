@@ -1,0 +1,46 @@
+package parse;
+
+import error.ErrorHelper;
+import java_cup.runtime.Symbol;
+import io.vavr.collection.List;
+import absyn.*;
+
+
+terminal Double NUM;
+terminal String ID;
+terminal PRINT;
+terminal LPAREN, RPAREN, COMMA, SEMICOLON;
+terminal ASSIGN;
+terminal PLUS, MINUS, TIMES, DIV;
+
+non terminal stm;
+non terminal exp;
+non terminal exp_list;
+
+precedence left SEMICOLON;
+precedence left PLUS, MINUS;
+precedence left TIMES, DIV;
+
+start with stm;
+
+stm ::=
+  stm SEMICOLON stm
+| ID ASSIGN exp
+| PRINT LPAREN exp_list RPAREN
+;
+
+exp ::=
+  NUM
+| ID
+| LPAREN stm COMMA exp RPAREN
+| exp PLUS exp
+| exp MINUS exp
+| exp TIMES exp
+| exp DIV exp
+| LPAREN exp RPAREN
+;
+
+exp_list ::=
+  exp
+| exp COMMA exp_list
+;
