@@ -1,6 +1,6 @@
 import absyn.*;
-import javaslang.collection.List;
-import javaslang.render.text.Boxes;
+import io.vavr.collection.List;
+import io.vavr.render.text.Boxes;
 
 import java.util.HashMap;
 
