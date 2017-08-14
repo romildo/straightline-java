@@ -33,7 +33,7 @@ public class AssignStm extends Stm {
    }
 
    @Override
-   public void interp(Map<String, Integer> mem) {
+   public void interp(Map<String, Double> mem) {
       mem.put(id, exp.eval(mem));
    }
 }

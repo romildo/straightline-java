@@ -23,7 +23,7 @@ public class Test {
       System.out.printf("maxargs: %d%n", p.maxargs());
 
       System.out.println("Execução:");
-      p.interp(new HashMap<String, Integer>());
+      p.interp(new HashMap<String, Double>());
 
    }
 }

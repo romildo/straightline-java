@@ -1,3 +1,4 @@
+
 package parse;
 
 import error.ErrorHelper;
@@ -6,16 +7,16 @@ import io.vavr.collection.List;
 import absyn.*;
 
 
-terminal Double NUM;
-terminal String ID;
-terminal PRINT;
-terminal LPAREN, RPAREN, COMMA, SEMICOLON;
-terminal ASSIGN;
-terminal PLUS, MINUS, TIMES, DIV;
+terminal Double  NUM;
+terminal String  ID;
+terminal         PRINT;
+terminal         LPAREN, RPAREN, COMMA, SEMICOLON;
+terminal         ASSIGN;
+terminal         PLUS, MINUS, TIMES, DIV;
 
-non terminal stm;
-non terminal exp;
-non terminal exp_list;
+non terminal Stm       stm;
+non terminal Exp       exp;
+non terminal List<Exp> exp_list;
 
 precedence left SEMICOLON;
 precedence left PLUS, MINUS;
@@ -24,23 +25,23 @@ precedence left TIMES, DIV;
 start with stm;
 
 stm ::=
-  stm SEMICOLON stm
-| ID ASSIGN exp
-| PRINT LPAREN exp_list RPAREN
+  stm:a SEMICOLON stm:b           {: RESULT = new CompoundStm(a, b); :}
+| ID:v ASSIGN exp:e               {: RESULT = new AssignStm(v, e); :}
+| PRINT LPAREN exp_list:l RPAREN  {: RESULT = new PrintStm(l); :}
 ;
 
 exp ::=
-  NUM
-| ID
-| LPAREN stm COMMA exp RPAREN
-| exp PLUS exp
-| exp MINUS exp
-| exp TIMES exp
-| exp DIV exp
-| LPAREN exp RPAREN
+  NUM:x                           {: RESULT = new NumExp(x); :}
+| ID:v                            {: RESULT = new IdExp(v); :}
+| LPAREN stm:s COMMA exp:e RPAREN {: RESULT = new EseqExp(s, e); :}
+| exp:a PLUS exp:b                {: RESULT = new OpExp(a, b, OpExp.Op.PLUS); :}
+| exp:a MINUS exp:b               {: RESULT = new OpExp(a, b, OpExp.Op.MINUS); :}
+| exp:a TIMES exp:b               {: RESULT = new OpExp(a, b, OpExp.Op.TIMES); :}
+| exp:a DIV exp:b                 {: RESULT = new OpExp(a, b, OpExp.Op.DIV); :}
+| LPAREN exp:e RPAREN             {: RESULT = e; :}
 ;
 
 exp_list ::=
-  exp
-| exp COMMA exp_list
+  exp:e                           {: RESULT = List.of(e); :}
+| exp:e COMMA exp_list:l          {: RESULT = l.prepend(e); :}
 ;

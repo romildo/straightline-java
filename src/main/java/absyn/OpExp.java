@@ -38,15 +38,15 @@ public class OpExp extends Exp {
    }
 
    @Override
-   public Integer eval(Map<String, Integer> mem) {
-      Integer x = left.eval(mem);
-      Integer y = right.eval(mem);
+   public Double eval(Map<String, Double> mem) {
+      Double x = left.eval(mem);
+      Double y = right.eval(mem);
       switch (op) {
          case PLUS: return x + y;
          case MINUS: return x - y;
          case TIMES: return x * y;
          case DIV: return x / y;
-         default: return 0;
+         default: return 0.0;
       }
    }
 }

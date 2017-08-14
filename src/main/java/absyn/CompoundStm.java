@@ -33,7 +33,7 @@ public class CompoundStm extends Stm {
    }
 
    @Override
-   public void interp(Map<String, Integer> mem) {
+   public void interp(Map<String, Double> mem) {
       stm1.interp(mem);
       stm2.interp(mem);
    }
