@@ -13,14 +13,14 @@ public class IdExp extends Exp {
 
    @Override
    public String toString() {
-      return "absyn.IdExp{" +
+      return "IdExp{" +
              "id='" + id + '\'' +
              '}';
    }
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("absyn.IdExp " + id);
+      return Tree.of("IdExp " + id);
    }
 
    @Override

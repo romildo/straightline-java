@@ -13,14 +13,14 @@ public class NumExp extends Exp {
 
    @Override
    public String toString() {
-      return "absyn.NumExp{" +
+      return "NumExp{" +
              "num=" + num +
              '}';
    }
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("absyn.NumExp " + num);
+      return Tree.of("NumExp " + num);
    }
 
    @Override
