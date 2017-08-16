@@ -20,7 +20,7 @@ public class OpExp extends Exp {
 
    @Override
    public String toString() {
-      return "absyn.OpExp{" +
+      return "OpExp{" +
              "left=" + left +
              ", right=" + right +
              ", op=" + op +
@@ -29,7 +29,7 @@ public class OpExp extends Exp {
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("absyn.OpExp " + op, left.toTree(), right.toTree());
+      return Tree.of("OpExp " + op, left.toTree(), right.toTree());
    }
 
    @Override

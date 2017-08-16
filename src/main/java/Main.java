@@ -1,5 +1,4 @@
 import absyn.Stm;
-import io.vavr.render.ToTree;
 import io.vavr.render.text.Boxes;
 import parse.Lexer;
 import parse.Parser;

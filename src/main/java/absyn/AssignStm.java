@@ -16,7 +16,7 @@ public class AssignStm extends Stm {
 
    @Override
    public String toString() {
-      return "absyn.AssignStm{" +
+      return "AssignStm{" +
              "id='" + id + '\'' +
              ", exp=" + exp +
              '}';
@@ -24,7 +24,7 @@ public class AssignStm extends Stm {
 
    @Override
    public Tree.Node<String> toTree() {
-      return Tree.of("absyn.AssignStm", Tree.of(id), exp.toTree());
+      return Tree.of("AssignStm", Tree.of(id), exp.toTree());
    }
 
    @Override
