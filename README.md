@@ -14,7 +14,7 @@ In order to develop the activities of the BCC328 (Compiler Construction 1) cours
 - [Log in](https://github.com/login) to github.
 - Visit the main [straightline](https://github.com/romildo/straightline) project page.
 - Fork the straightline project. For that use the `Fork` buttom at the top right of the project page.
-  ![forking](images/fork1.png)  
+  ![forking](images/fork1.png)
   This will create your own copy of the main repository. It can be freely modified by you. But probably you do not have permission to modify the main repository.
 - In your computer clone your fork of the straightline project. Notice that in the commands that follow any text written between angular brackets `<>` shold be replaced by more appropriate text, according to your setup. For instance `<working directory` should be replaced by the name of the directory (folder) for the working activities.
 ```
@@ -211,3 +211,48 @@ Test with the AST you have created above.
 ## Write test units for the project
 
 Write the class `MainTest` in the directory `test/java` to test the interpreter.
+
+# Assignment (Trabalho)
+
+Faça as seguintes modificações no projeto do compilador da linguagem:
+
+- acrescente literais booleanos: `#t` para verdadeiro, e `#f` para falso
+
+- acrecente os operadores relacionais `==`, `<>`, `>`, `>=`, `<`,
+  `<=`, para as operações relacionais, com precedência menor que os
+  operadores aritméticos, e não associativos.
+
+- acrecente o operador lógico `and` para a conjunção lógica, com
+  precedência menor que os operadores relacionais, e associatividade à
+  esquerda.
+
+- acrecente o operador lógico `or` para a disjunção lógica, com
+  precedência menor que `and`, e associatividade à esquerda.
+
+- acrescente o comando condicional
+```
+if <exp> then <stm> else <stm>
+```
+  onde <exp> é uma expressão lógica, e <stm> é um comando. Em sua execução avalia-se a expressão, e ela for verdadeira executa-se o primeiro comando.
+
+- acrescente o comando condicional
+```
+if <exp> then <stm>
+```
+  onde `<exp>` é uma expressão lógica, e `<stm>` é um comando. Em sua
+  execução avalia-se a expressão, e ela for verdadeira executa-se o
+  primeiro comando. Caso contráro executa-se o segundo comando.
+
+- acrescente o comando de repetição
+```
+while <exp> do <stm>
+```
+  onde `<exp>` é uma expressão lógica, e `<stm>` é um comando.  Em sua
+  execução executa-se o comando enquanto a expressão for verdadeira.
+
+- acrescentar o comando
+```
+read <id>
+```
+  que quando executado obtém da entrada padrão um valor inteiro,
+  armazenando-o na variável indicada.
