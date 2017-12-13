@@ -1,4 +1,6 @@
 import absyn.Stm;
+import error.CompilerError;
+import error.FatalError;
 import io.vavr.render.text.Boxes;
 import parse.Lexer;
 import parse.Parser;
@@ -14,7 +16,7 @@ public class Main {
       String fileName;
 
       if (args.length == 0) {
-         fileName = "stdin";
+         fileName = "-";
          input = new java.io.InputStreamReader(System.in);
       }
       else {
@@ -36,17 +38,28 @@ public class Main {
          run(args);
       }
       catch (FileNotFoundException e) {
-         System.err.printf("file not found: %s\n", args[0]);
+         System.err.printf("file not found: %s%n", args[0]);
          System.exit(1);
       }
       catch (IOException e) {
-         System.err.println("I/O error");
+         System.err.printf("I/O error:%n%s%n", e.getLocalizedMessage());
          System.exit(2);
       }
+      catch (CompilerError e) {
+         System.err.printf("Compilation error:%n%s%n", e.getLocalizedMessage());
+         System.exit(3);
+      }
+      catch (FatalError e) {
+         System.err.printf("Fatal error:%n%s%n", e.getLocalizedMessage());
+         System.exit(4);
+      }
       catch (Exception e) {
-         System.out.println(e.getLocalizedMessage());
+         if (e.getMessage().equals("Can't recover from previous error(s)")) {
+            System.err.printf("Fatal error:%n%s%n", e.getLocalizedMessage());
+            System.exit(5);
+         }
+         System.out.printf("Unexpected error!");
          throw e;
-         //System.exit(3);
       }
    }
 }
