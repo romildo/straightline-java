@@ -15,14 +15,6 @@ public class CompoundStm extends Stm {
    }
 
    @Override
-   public String toString() {
-      return "CompoundStm{" +
-             "stm1=" + stm1 +
-             ", stm2=" + stm2 +
-             '}';
-   }
-
-   @Override
    public Tree.Node<String> toTree() {
       return Tree.of("CompoundStm", stm1.toTree(), stm2.toTree());
    }

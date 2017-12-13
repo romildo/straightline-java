@@ -14,13 +14,6 @@ public class PrintStm extends Stm {
    }
 
    @Override
-   public String toString() {
-      return "PrintStm{" +
-             "exps=" + exps +
-             '}';
-   }
-
-   @Override
    public Tree.Node<String> toTree() {
       return Tree.of("PrintStm", exps.map(Exp::toTree));
    }

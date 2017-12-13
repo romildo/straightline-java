@@ -12,13 +12,6 @@ public class IdExp extends Exp {
    }
 
    @Override
-   public String toString() {
-      return "IdExp{" +
-             "id='" + id + '\'' +
-             '}';
-   }
-
-   @Override
    public Tree.Node<String> toTree() {
       return Tree.of("IdExp " + id);
    }
