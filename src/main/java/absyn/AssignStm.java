@@ -15,14 +15,6 @@ public class AssignStm extends Stm {
    }
 
    @Override
-   public String toString() {
-      return "AssignStm{" +
-             "id='" + id + '\'' +
-             ", exp=" + exp +
-             '}';
-   }
-
-   @Override
    public Tree.Node<String> toTree() {
       return Tree.of("AssignStm", Tree.of(id), exp.toTree());
    }

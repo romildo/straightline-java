@@ -9,7 +9,7 @@
    <version>0.1-SNAPSHOT</version>
    <packaging>jar</packaging>
 
-   <name>straighline compiler</name>
+   <name>straighline interpreter</name>
    <url>https://github.com/romildo/straightline</url>
 
    <properties>

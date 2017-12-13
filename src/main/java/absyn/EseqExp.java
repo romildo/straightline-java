@@ -15,14 +15,6 @@ public class EseqExp extends Exp {
    }
 
    @Override
-   public String toString() {
-      return "EseqExp{" +
-             "stm=" + stm +
-             ", exp=" + exp +
-             '}';
-   }
-
-   @Override
    public Tree.Node<String> toTree() {
       return Tree.of("EseqExp", stm.toTree(), exp.toTree());
    }

@@ -12,13 +12,6 @@ public class NumExp extends Exp {
    }
 
    @Override
-   public String toString() {
-      return "NumExp{" +
-             "num=" + num +
-             '}';
-   }
-
-   @Override
    public Tree.Node<String> toTree() {
       return Tree.of("NumExp " + num);
    }
